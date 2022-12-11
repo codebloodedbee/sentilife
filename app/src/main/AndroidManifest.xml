@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.sapphirevirtual.sentilife"
+    android:requestLegacyExternalStorage="true">
+    <!-- Using network location provider -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Using GPS location provider -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Using the monitoring of the Internet connectivity -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Using calling a phone -->
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- Using WiFi state toggling -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- Using WebView and access to the internet -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Using speaker volume control -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- Using address book -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- Using phone call monitoring -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- Using caller notification and identification -->
+    <uses-permission android:name="android.permission.READ_CALL_LOG" /> <!-- Using phone call answer -->
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" /> <!-- Using bootstrap notification -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- Using SMS receiving -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" /> <!-- Using SMS sending -->
+    <uses-permission android:name="android.permission.SEND_SMS" /> <!-- Using foreground service -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- Using the body sensors -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" /> <!-- Using the forced wake state -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_icon"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Sentinel_life">
+        <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
+            android:name=".Notification"
+            android:exported="false" />
+
+        <service
+            android:name=".GPSTracker"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".BackgroundService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.sapphirevirtual.sentilife.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".SpeedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Payment"
+            android:exported="false" />
+        <activity
+            android:name=".Record"
+            android:exported="false" />
+
+        <meta-data
+            android:name="co.paystack.android.PublicKey"
+            android:value="pk_live_68bf085a038d0f3e09dced6caab850db147d4c87" />
+
+        <activity
+            android:name=".RecordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Launch"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CaptureActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".AccidentDetectorService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".SosWidget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/sos_widget_info" />
+        </receiver>
+
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddEmergContact"
+            android:exported="false" />
+        <activity
+            android:name=".SendSMSActivity"
+            android:exported="false" />
+
+        <service
+            android:name=".SensorService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".SensorService2"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".GPSManager"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

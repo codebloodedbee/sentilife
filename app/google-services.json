@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1030038410924",
+    "project_id": "sentilife-87c73",
+    "storage_bucket": "sentilife-87c73.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030038410924:android:7030a8cdb20c03197a3109",
+        "android_client_info": {
+          "package_name": "com.sapphirevirtual.sentilife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030038410924-s09pbt2icq9umbrvl9sng5ettbkhq0f1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB60-cM7sGgnob0wAhY_sVyXrpMJh30n70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030038410924-s09pbt2icq9umbrvl9sng5ettbkhq0f1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

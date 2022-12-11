@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.Sentinel_life.AppWidget.Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_blue_200"
+
+    android:orientation="vertical"
+    android:theme="@style/Theme.Sentinel_life.AppWidgetContainer">
+
+
+    <Button
+        android:id="@+id/sync_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/purple_700"
+        android:text="SOS" />
+
+
+</LinearLayout>

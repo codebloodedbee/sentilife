@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg3"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".Launch">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <!--        <ImageView-->
+        <!--            android:layout_width="190dp"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_gravity="center_horizontal|bottom"-->
+
+        <!--            android:layout_marginBottom="5dp"-->
+        <!--            android:layout_weight="0"-->
+        <!--            android:gravity="center_horizontal"-->
+        <!--            android:onClick="btnTest3"-->
+        <!--            app:srcCompat="@drawable/sttudiom" />-->
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/logo_icon" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="0"
+            android:fontFamily="@font/quicksand_medium"
+            android:text="Sentilife Accident Detector"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryLight"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button11"
+            style="@style/button_1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0"
+            android:capitalize="none"
+            android:onClick="btnLogin"
+            android:text="Sign in"
+            android:textAllCaps="false" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button8"
+            style="@style/button_2"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0"
+            android:onClick="btnRegister"
+            android:text="Create an account"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</LinearLayout>
