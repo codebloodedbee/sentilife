@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:padding="15dp"
-        android:text="Capture ID Card "
-        android:textAllCaps="true"
+        android:text="Capture Picture. "
+        android:textAllCaps="false"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -69,38 +69,6 @@
         <!--            android:textColor="@color/white"-->
         <!--            android:textStyle="bold" />-->
 
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_weight="1"
-
-            android:onClick="selectImageI"
-            android:text="select image"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-        <Button
-            android:id="@+id/btnTrade"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="5dp"
-
-            android:onClick="next"
-            android:text="UPLOAD IMAGES"
-            android:textColor="@color/red"
-            android:textStyle="bold" />
     </LinearLayout>
 
 </LinearLayout>

@@ -3,11 +3,6 @@ package com.sapphirevirtual.sentilife;
 import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -19,6 +14,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.sapphirevirtual.sentilife.remote.FileService;
 
@@ -38,7 +38,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RecordActivity extends AppCompatActivity {
+public class RecordActivity2 extends AppCompatActivity {
 
     // Initializing all variables..
     private TextView startTV, stopTV, playTV, stopplayTV, statusTV;
@@ -67,10 +67,12 @@ public class RecordActivity extends AppCompatActivity {
         // initialize all variables with their layout items.
         statusTV = findViewById(R.id.idTVstatus);
         startTV = findViewById(R.id.btnRecord);
-
+        stopTV = findViewById(R.id.btnStop);
         playTV = findViewById(R.id.btnPlay);
-
-
+        stopplayTV = findViewById(R.id.btnStopPlay);
+        stopTV.setBackgroundColor(getResources().getColor(R.color.gray));
+        playTV.setBackgroundColor(getResources().getColor(R.color.gray));
+        stopplayTV.setBackgroundColor(getResources().getColor(R.color.gray));
 
         startTV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +86,15 @@ public class RecordActivity extends AppCompatActivity {
                 }
             }
         });
+        stopTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // pause Recording method will
+                // pause the recording of audio.
+                pauseRecording();
+
+            }
+        });
         playTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,7 +103,14 @@ public class RecordActivity extends AppCompatActivity {
                 playAudio();
             }
         });
-
+        stopplayTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // pause play method will
+                // pause the play of audio
+                pausePlaying();
+            }
+        });
     }
 
     private void startRecording() throws IOException {
@@ -101,6 +119,12 @@ public class RecordActivity extends AppCompatActivity {
         // to record nd store the audio.
         if (CheckPermissions()) {
 
+            // setbackgroundcolor method will change
+            // the background color of text view.
+            stopTV.setBackgroundColor(getResources().getColor(R.color.purple_200));
+            startTV.setBackgroundColor(getResources().getColor(R.color.gray));
+            playTV.setBackgroundColor(getResources().getColor(R.color.gray));
+            stopplayTV.setBackgroundColor(getResources().getColor(R.color.gray));
 
             // we are here initializing our filename variable
             // with the path of the recorded audio file.
@@ -181,29 +205,15 @@ public class RecordActivity extends AppCompatActivity {
     private void RequestPermissions() {
         // this method is used to request the
         // permission for audio recording and storage.
-        ActivityCompat.requestPermissions(RecordActivity.this, new String[]{RECORD_AUDIO, WRITE_EXTERNAL_STORAGE}, REQUEST_AUDIO_PERMISSION_CODE);
+        ActivityCompat.requestPermissions(RecordActivity2.this, new String[]{RECORD_AUDIO, WRITE_EXTERNAL_STORAGE}, REQUEST_AUDIO_PERMISSION_CODE);
     }
 
 
     public void playAudio() {
-
-
-        // below method will stop
-        // the audio recording.
-//        try {
-//            mRecorder.prepare();
-        mRecorder.stop();
-
-
-
-        // below method will release
-        // the media recorder class.
-        mRecorder.release();
-        mRecorder = null;
-        statusTV.setText("Recording Stopped");
-
-
-
+        stopTV.setBackgroundColor(getResources().getColor(R.color.gray));
+        startTV.setBackgroundColor(getResources().getColor(R.color.purple_200));
+        playTV.setBackgroundColor(getResources().getColor(R.color.gray));
+        stopplayTV.setBackgroundColor(getResources().getColor(R.color.purple_200));
 
         // for playing our recorded audio
         // we are using media player class.
@@ -218,7 +228,7 @@ public class RecordActivity extends AppCompatActivity {
 
             // below method will start our media player.
 //            mPlayer.start();
-            statusTV.setText("Recording Stopped and uploading");
+            statusTV.setText("Recording Started Playing");
         } catch (IOException e) {
             Log.e("TAG", "prepare() failed" + e.getMessage() );
         }
@@ -227,6 +237,10 @@ public class RecordActivity extends AppCompatActivity {
     }
 
     public void pauseRecording() {
+        stopTV.setBackgroundColor(getResources().getColor(R.color.gray));
+        startTV.setBackgroundColor(getResources().getColor(R.color.purple_200));
+        playTV.setBackgroundColor(getResources().getColor(R.color.purple_200));
+        stopplayTV.setBackgroundColor(getResources().getColor(R.color.purple_200));
 
 
 
@@ -251,13 +265,15 @@ public class RecordActivity extends AppCompatActivity {
         // class and pause the playing of our recorded audio.
         mPlayer.release();
         mPlayer = null;
-
-
+        stopTV.setBackgroundColor(getResources().getColor(R.color.gray));
+        startTV.setBackgroundColor(getResources().getColor(R.color.purple_200));
+        playTV.setBackgroundColor(getResources().getColor(R.color.purple_200));
+        stopplayTV.setBackgroundColor(getResources().getColor(R.color.gray));
         statusTV.setText("Recording Play Stopped");
     }
 
     public void progProc(){
-        progressDialog = new ProgressDialog(RecordActivity.this);
+        progressDialog = new ProgressDialog(RecordActivity2.this);
         progressDialog.setMessage("Uploading Audio"); // Setting Message
         progressDialog.setTitle("Processing"); // Setting Title
         progressDialog.setIcon(R.drawable.logo_icon);
@@ -305,7 +321,7 @@ public class RecordActivity extends AppCompatActivity {
                     try {
                         JSONObject jsonObject = new JSONObject(String.valueOf(response));
                         String respons =  jsonObject.getString("message");
-                        Toast.makeText(RecordActivity.this, respons , Toast.LENGTH_LONG).show();
+                        Toast.makeText(RecordActivity2.this, respons , Toast.LENGTH_LONG).show();
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -313,7 +329,7 @@ public class RecordActivity extends AppCompatActivity {
 //                    Toast.makeText(RecordActivity.this, "Uploading completed2. "+call , Toast.LENGTH_LONG).show();
 
 
-                    Intent intent = new Intent(RecordActivity.this, DashboardActivity.class);
+                    Intent intent = new Intent(RecordActivity2.this, DashboardActivity.class);
                     startActivity(intent);
                 }
 
@@ -324,7 +340,7 @@ public class RecordActivity extends AppCompatActivity {
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 //
                 progressDialog.dismiss();
-                Toast.makeText(RecordActivity.this, "ERROR: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(RecordActivity2.this, "ERROR: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -335,14 +351,14 @@ public class RecordActivity extends AppCompatActivity {
 
 
     public void go(){
-        Intent intent = new Intent(RecordActivity.this, DashboardActivity.class);
+        Intent intent = new Intent(RecordActivity2.this, DashboardActivity.class);
         startActivity(intent);
     }
 
     @NonNull
     private RequestBody createPartFromString(String descriptionString) {
         return RequestBody.create(
-                okhttp3.MultipartBody.FORM, descriptionString);
+                MultipartBody.FORM, descriptionString);
     }
 
     @NonNull

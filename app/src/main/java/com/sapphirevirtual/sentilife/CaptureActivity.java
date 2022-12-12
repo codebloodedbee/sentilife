@@ -81,6 +81,8 @@ public class CaptureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_capture);
         this.imageView = (ImageView)this.findViewById(R.id.ivID);
 
+        getSupportActionBar().hide();
+
 
         dispatchTakePictureIntent();
 
@@ -123,12 +125,14 @@ public class CaptureActivity extends AppCompatActivity {
 
 //        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
 
-            Toast.makeText(this, "picture location: "+currentPhotoPathI, Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "picture location: "+currentPhotoPathI, Toast.LENGTH_LONG).show();
             if (isStoragePermissionGranted()) {
-                imageView.setImageBitmap(BitmapFactory.decodeFile(currentPhotoPathF));
+//                imageView.setImageBitmap(BitmapFactory.decodeFile(currentPhotoPathI));
 
             }
-            Toast.makeText(this, "captured", Toast.LENGTH_LONG).show();
+
+            uploadBitmap();
+//            Toast.makeText(this, "captured", Toast.LENGTH_LONG).show();
 //        }
 
 
@@ -177,45 +181,32 @@ public class CaptureActivity extends AppCompatActivity {
 
     private void uploadBitmap() {
 
-        Log.i("cimages", "F"+currentPhotoPathF);
+        Log.i("image", "F"+currentPhotoPathI);
 
-
-//        Log.i("cimages", "FR"+ getRealPathFromURI(currentPhotoPathF));
-        /////////////////
-        File filee = new File(compressImage(currentPhotoPathF));// get it from a file chooser or a camera intent
+        File filee = new File(compressImage(currentPhotoPathI));// get it from a file chooser or a camera intent
 
 
         progProc();
 
-        String descriptionString = "unregistered_tradein_completed";
 
-        //RequestBody command = RequestBody.create(MultipartBody.FORM, descriptionString);
-
-        Retrofit.Builder builder = new Retrofit.Builder().baseUrl("https://apis.sentinelock.com/v2/android/sentinelapi.php/")
+        Retrofit.Builder builder = new Retrofit.Builder().baseUrl("https://apis.sentinelock.com/sentinelife/v1/dev/post/")
                 .addConverterFactory(GsonConverterFactory.create());
         // retrofit object
         Retrofit retrofit = builder.build();
 
         FileService fs = retrofit.create(FileService.class);
 
-        MultipartBody.Part front_image = prepareFilePart("front_image", filee);
+        MultipartBody.Part pictureFile = prepareFilePart("pictureFile", filee);
 
 
 
-        RequestBody command = createPartFromString("unregistered_tradein_completed");
-        RequestBody session_id = createPartFromString("1001");
-        // RequestBody comment = createPartFromString(FinishTrade.COMMENT);
-        //RequestBody agent_code = createPartFromString(FinishTrade.AGENT_CODE);
+        RequestBody emergencyType = createPartFromString("media");
+        RequestBody userId = createPartFromString("1001");
 
-        RequestBody comment = createPartFromString("no comment o");
-        RequestBody agent_code = createPartFromString("109");
 
         // finally, execute the request
-        Call<ResponseBody> call = fs.uploadMultipleFiles(command, session_id,  front_image);
+        Call<ResponseBody> call = fs.uploadFile(userId, emergencyType,  pictureFile);
 
-
-
-        //Call<ResponseBody> call = fs.upload(command,front_image);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -230,6 +221,9 @@ public class CaptureActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                     Toast.makeText(CaptureActivity.this, "Uploading completed. " , Toast.LENGTH_LONG).show();
+//                    Toast.makeText(CaptureActivity.this, "Uploading completed2. "+call , Toast.LENGTH_LONG).show();
+
+
                     Intent intent = new Intent(CaptureActivity.this, DashboardActivity.class);
                     startActivity(intent);
                 }

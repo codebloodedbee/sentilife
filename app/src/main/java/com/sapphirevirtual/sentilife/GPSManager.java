@@ -61,18 +61,18 @@ public class GPSManager extends Service implements android.location.GpsStatus.Li
 //                sensorService2.onGPSUpdate(location);
 
                 Log.i("GPs", "GPSs  call back ");
-                Toast.makeText(context,"call back called;", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context,"call back called;", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onProviderDisabled(final String provider) {
-                Log.i("GPs", "Provider disablled ");
+                Log.i("GPs", "Provider disabled ");
             }
 
             @Override
             public void onProviderEnabled(final String provider) {
 
-                Log.i("GPs", "Provvider enabled ");
+                Log.i("GPs", "Provider enabled ");
             }
 
             @Override

@@ -120,6 +120,7 @@ public class DashboardActivity extends AppCompatActivity implements GPSCallback{
         CustomToastActivity.CustomToastActivity(this);
 
         userData = new UserData(this);
+
         gpsHandler = new GPSHandler(this);
 
 
