@@ -7,10 +7,15 @@ import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Settings extends AppCompatActivity {
+
+    UserData userData;
+    TextView tvEmail;
+    TextView tvName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +23,14 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         getSupportActionBar().hide();
+
+        userData = new UserData(this);
+        tvEmail = findViewById(R.id.tvEmail);
+        tvName = findViewById(R.id.tvName);
+
+        tvName.setText(""+ userData.getFirstname()+ " "+ userData.getLastname());
+
+        tvEmail.setText(""+ userData.getEmail());
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);

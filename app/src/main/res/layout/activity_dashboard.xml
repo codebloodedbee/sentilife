@@ -592,7 +592,7 @@
 
                                 <LinearLayout
                                     android:layout_width="0dp"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="100dp"
                                     android:layout_marginRight="4dp"
                                     android:layout_weight="1"
                                     android:background="@color/light_blue_50"
@@ -632,7 +632,8 @@
                                     android:onClick="accident"
                                     android:orientation="vertical"
                                     android:paddingTop="10dp"
-                                    android:paddingBottom="10dp">
+                                    android:paddingBottom="10dp"
+                                    android:visibility="gone">
 
                                     <ImageView
                                         android:id="@+id/imageVidew"

@@ -87,14 +87,14 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/textView5"
+                                android:id="@+id/tvName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="John Doe"
                                 android:textSize="20sp" />
 
                             <TextView
-                                android:id="@+id/textView6"
+                                android:id="@+id/tvEmail"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="john@gmail.com" />

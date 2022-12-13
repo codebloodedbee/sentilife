@@ -72,6 +72,14 @@ public class RecordActivity extends AppCompatActivity {
 
 
 
+
+        try {
+            startRecording();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
         startTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,6 +109,10 @@ public class RecordActivity extends AppCompatActivity {
         // to record nd store the audio.
         if (CheckPermissions()) {
 
+
+            startTV.setVisibility(View.GONE);
+
+            playTV.setVisibility(View.VISIBLE);
 
             // we are here initializing our filename variable
             // with the path of the recorded audio file.
@@ -186,6 +198,10 @@ public class RecordActivity extends AppCompatActivity {
 
 
     public void playAudio() {
+
+        startTV.setVisibility(View.VISIBLE);
+
+        playTV.setVisibility(View.GONE);
 
 
         // below method will stop

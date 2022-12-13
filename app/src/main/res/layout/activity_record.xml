@@ -1,10 +1,11 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
+    android:padding="20dp"
+
     tools:context=".RecordActivity">
 
     <!--Heading Text View-->
@@ -22,21 +23,25 @@
     <!--This will display the status of our app when
         we will record some audio and play that audio-->
     <TextView
-        android:id="@+id/idTVstatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="@string/status"
-        android:textAlignment="center"
-        android:textSize="24sp" />
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <!--Linear Layout for adding textviews
         in horizontal manner-->
+    <TextView
+        android:id="@+id/idTVstatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/status"
+        android:textAlignment="viewStart"
+        android:textSize="24sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="120dp"
         android:orientation="vertical"
         android:padding="10dp"
         android:weightSum="4">
@@ -65,7 +70,6 @@
                 android:textStyle="bold" />
 
 
-
         </LinearLayout>
 
         <LinearLayout
@@ -90,7 +94,6 @@
                 android:textStyle="bold" />
 
 
-
         </LinearLayout>
 
         <!--Textview to stop audio recording
@@ -103,4 +106,4 @@
             drawableTop will add above mic image-->
 
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>
