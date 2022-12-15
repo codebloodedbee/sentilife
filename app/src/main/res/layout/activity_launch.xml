@@ -42,7 +42,7 @@
             android:layout_marginBottom="20dp"
             android:layout_weight="0"
             android:fontFamily="@font/quicksand_medium"
-            android:text="Sentilife Accident Detector"
+            android:text="Sentilife"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryLight"

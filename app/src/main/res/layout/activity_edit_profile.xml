@@ -21,7 +21,7 @@
             android:gravity="bottom"
             android:orientation="vertical"
             android:paddingLeft="20dp"
-            android:paddingBottom="20dp">
+            android:paddingBottom="10dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -59,7 +59,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="16dp"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
@@ -113,7 +112,7 @@
             android:background="@drawable/ass_list_bg"
             android:orientation="vertical"
             android:paddingTop="10dp"
-            android:paddingBottom="60dp">
+            android:paddingBottom="10dp">
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -135,17 +134,17 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView13"
+                            android:id="@+id/tvNk1"
                             style="@style/form_title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:letterSpacing="0.1"
-                            android:text="@string/email"
+                            android:text="Next of kin(1)"
                             android:textSize="12sp"
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/etEmail"
+                            android:id="@+id/nk1"
                             style="@style/student_details_title_input"
 
                             android:inputType="textEmailAddress" />
@@ -163,16 +162,125 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:letterSpacing="0.1"
-                            android:text="@string/email"
+                            android:text="Phone Number"
                             android:textSize="12sp"
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/etEmail"
+                            android:id="@+id/etNkPn1"
+                            style="@style/student_details_title_input"
+
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/body_item_margin2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvNk2"
+                            style="@style/form_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.1"
+                            android:text="Next of kin(2)"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/nk2"
                             style="@style/student_details_title_input"
 
                             android:inputType="textEmailAddress" />
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/body_item_margin2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            style="@style/form_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.1"
+                            android:text="Phone Number"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etNkPn2"
+                            style="@style/student_details_title_input"
+
+                            android:inputType="number" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/body_item_margin2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvNk3"
+                            style="@style/form_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.1"
+                            android:text="Next of kin(1)"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/nk3"
+                            style="@style/student_details_title_input"
+
+                            android:inputType="textEmailAddress" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/body_item_margin2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewaa13"
+                            style="@style/form_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.1"
+                            android:text="Phone Number"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etNkPn3"
+                            style="@style/student_details_title_input"
+
+                            android:inputType="number" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button3"
+                        style="@style/button_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="0"
+                        android:onClick="submit"
+
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="Update Profile"
+                        android:textStyle="bold" />
+
+
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
