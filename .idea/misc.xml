@@ -7,6 +7,7 @@
         <entry key="../../.gradle/caches/transforms-3/fd7388ecbaca9c0d1714977845912f4b/transformed/paystack-3.0.12/res/layout/co_paystack_android____activity_otp.xml" value="0.17870884993587002" />
         <entry key="app/src/main/res/drawable-nodpi/answer_frame.xml" value="0.277" />
         <entry key="app/src/main/res/drawable-nodpi/ass_list_bg.xml" value="0.2245" />
+        <entry key="app/src/main/res/drawable-nodpi/back_button_container.xml" value="0.367" />
         <entry key="app/src/main/res/drawable-nodpi/button1.xml" value="0.277" />
         <entry key="app/src/main/res/drawable-nodpi/button2.xml" value="0.277" />
         <entry key="app/src/main/res/drawable-nodpi/dropdown_border.xml" value="0.2245" />
@@ -25,7 +26,7 @@
         <entry key="app/src/main/res/layout/activity_capture.xml" value="0.2744664510091146" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.3558122558130311" />
         <entry key="app/src/main/res/layout/activity_dashboard2.xml" value="0.4036458333333333" />
-        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.33133817870884996" />
+        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.1928310986307249" />
         <entry key="app/src/main/res/layout/activity_launch.xml" value="0.30383046468098956" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.29590504964192704" />
         <entry key="app/src/main/res/layout/activity_login2.xml" value="0.32695738036900623" />

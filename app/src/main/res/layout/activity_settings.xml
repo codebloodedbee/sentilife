@@ -127,6 +127,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center_vertical"
+                            android:onClick="editProfile"
                             android:orientation="horizontal">
 
                             <TextView
@@ -356,6 +357,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center_vertical"
+                            android:onClick="privacyPolicy"
                             android:orientation="horizontal">
 
                             <TextView
@@ -379,6 +381,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center_vertical"
+                            android:onClick="termOfUse"
                             android:orientation="horizontal">
 
                             <TextView

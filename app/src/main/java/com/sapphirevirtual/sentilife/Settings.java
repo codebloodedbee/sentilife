@@ -7,6 +7,7 @@ import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -64,5 +65,23 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void editProfile(View view) {
+
+        Intent intent = new Intent(this, EditProfile.class);
+        startActivity(intent);
+    }
+
+    public void privacyPolicy(View view) {
+
+        Intent intent = new Intent(this, PrivacyPolicy.class);
+        startActivity(intent);
+    }
+
+    public void termOfUse(View view) {
+
+        Intent intent = new Intent(this, Tc.class);
+        startActivity(intent);
     }
 }

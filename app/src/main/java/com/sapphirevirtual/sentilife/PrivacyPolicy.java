@@ -10,5 +10,7 @@ public class PrivacyPolicy extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy_policy);
+
+        getSupportActionBar().hide();
     }
 }
