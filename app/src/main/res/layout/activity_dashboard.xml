@@ -78,7 +78,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:contentDescription="profille picture"
-                                tools:srcCompat="@drawable/profile" />
+                                tools:srcCompat="@drawable/prof" />
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
 

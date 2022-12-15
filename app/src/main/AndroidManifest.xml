@@ -41,6 +41,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sentinel_life">
         <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
             android:name=".Tc"
             android:exported="false" />
         <activity
