@@ -113,7 +113,7 @@ public class DashboardActivity extends AppCompatActivity implements GPSCallback{
 
         mServiceHandler = new ServiceHandler(this);
         isTracking = false;
-        buttonToggleTracking = (Button) findViewById(R.id.buttonToggleTracking);
+//        buttonToggleTracking = (Button) findViewById(R.id.buttonToggleTracking);
 
         tvStartDriving =  findViewById(R.id.tvStartDriving);
 
@@ -130,19 +130,10 @@ public class DashboardActivity extends AppCompatActivity implements GPSCallback{
         Date c = Calendar.getInstance().getTime();
         System.out.println("Current time => " + c);
 
-        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
-        String formattedDate = df.format(c);
-
-        tvDate = (TextView)findViewById(R.id.tvDate);
-        tvDate.setText(""+formattedDate);
-
 
 
 
         tvSpeed=(TextView)findViewById(R.id.tvSpeed);
-        tvElevation=(TextView)findViewById(R.id.tvElevation);
-        tvBearing=(TextView)findViewById(R.id.tvBearing);
-
 
 
 
@@ -527,8 +518,8 @@ public class DashboardActivity extends AppCompatActivity implements GPSCallback{
             Speed.setSpeed(ks+1, 200, 50);
 
             tvSpeed.setText(ks+"");
-            tvElevation.setText(altitude+"");
-            tvBearing.setText(bearing+"");
+//            tvElevation.setText(altitude+"");
+//            tvBearing.setText(bearing+"");
 
 
 

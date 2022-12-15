@@ -31,6 +31,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17870884993587002" />
         <entry key="app/src/main/res/layout/activity_notification.xml" value="0.2996423826507138" />
         <entry key="app/src/main/res/layout/activity_payment.xml" value="0.3480157957366513" />
+        <entry key="app/src/main/res/layout/activity_privacy_policy.xml" value="0.33133817870884996" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.30990456870194427" />
         <entry key="app/src/main/res/layout/activity_record.xml" value="0.3374476328014359" />
         <entry key="app/src/main/res/layout/activity_record2.xml" value="0.1" />
@@ -39,6 +40,7 @@
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.3700037107757138" />
         <entry key="app/src/main/res/layout/activity_speed.xml" value="0.33133817870884996" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_tc.xml" value="0.33133817870884996" />
         <entry key="app/src/main/res/layout/activity_update_profile.xml" value="0.22794462402134996" />
         <entry key="app/src/main/res/layout/custom_progress_layout.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/custom_toast.xml" value="0.3098958333333333" />
