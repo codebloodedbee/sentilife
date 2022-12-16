@@ -248,6 +248,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                                     String phoneNumber = datao.getString("phoneNumber");
                                     String homePhoneNumber = datao.getString("homePhoneNumber");
                                     String contactAddress = datao.getString("contactAddress");
+                                    String pictureFile = datao.getString("pictureFile");
                                     String state = datao.getString("state");
                                     String country = datao.getString("country");
                                     String emailVerifyStatus = datao.getString("emailVerifyStatus");
@@ -261,7 +262,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
 
 
                                     UserData userData = new UserData(getApplicationContext());
-                                    userData.storeData(USER_ID, FIRST_NAME, LAST_NAME, email, phoneNumber, country, state );
+                                    userData.storeData(USER_ID, FIRST_NAME, LAST_NAME, email, contactAddress, pictureFile, phoneNumber, country, state );
 
 //                                    progressOFF();
                                     progressDialog.dismiss();
@@ -383,6 +384,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                                     String phoneNumber = datao.getString("phoneNumber");
                                     String homePhoneNumber = datao.getString("homePhoneNumber");
                                     String contactAddress = datao.getString("contactAddress");
+                                    String pictureFile = datao.getString("pictureFile");
                                     String state = datao.getString("state");
                                     String country = datao.getString("country");
                                     String emailVerifyStatus = datao.getString("emailVerifyStatus");
@@ -396,7 +398,8 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
 
 
                                     UserData userData = new UserData(getApplicationContext());
-                                    userData.storeData(USER_ID, FIRST_NAME, LAST_NAME, email, phoneNumber,  country, state );
+                                    userData.storeData(USER_ID, FIRST_NAME, LAST_NAME, email, contactAddress, pictureFile, phoneNumber, country, state );
+
 
                                     if(emergencyNumber1.equals("")){
 

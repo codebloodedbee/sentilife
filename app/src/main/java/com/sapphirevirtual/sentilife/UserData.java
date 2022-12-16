@@ -16,11 +16,13 @@ public class UserData {
         return mContext.getSharedPreferences(mContext.getPackageName(), Context.MODE_PRIVATE);
     }
 
-    public void storeData(String userId, String firstname, String lastname, String email, String phone, String country, String state) {
+    public void storeData(String userId, String firstname, String lastname, String email, String phone, String address, String pictureFile, String country, String state) {
         getSharedPref().edit().putString("userId", userId).apply();
         getSharedPref().edit().putString("firstname", firstname).apply();
         getSharedPref().edit().putString("lastname", lastname).apply();
         getSharedPref().edit().putString("email", email).apply();
+        getSharedPref().edit().putString("address", address).apply();
+        getSharedPref().edit().putString("pictureFile", pictureFile).apply();
         getSharedPref().edit().putString("country", country).apply();
         getSharedPref().edit().putString("state", state).apply();
         getSharedPref().edit().putString("phone", phone).apply();
