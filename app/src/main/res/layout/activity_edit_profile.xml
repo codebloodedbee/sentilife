@@ -55,55 +55,6 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    app:cardCornerRadius="40dp">
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/imageView11"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:srcCompat="@drawable/prof" />
-                    </FrameLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="12dp"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="John Doe"
-                        android:textColor="@color/white"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/tvEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="john@gmail.com"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
-            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -136,15 +87,15 @@
                         <TextView
                             android:id="@+id/tvNk1"
                             style="@style/form_title"
+                            android:text="First Name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:letterSpacing="0.1"
-                            android:text="Next of kin(1)"
                             android:textSize="12sp"
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/nk1"
+                            android:id="@+id/etFn"
                             style="@style/student_details_title_input"
 
                             android:inputType="textEmailAddress" />
@@ -157,7 +108,103 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView13"
+
+                            style="@style/form_title"
+                            android:text="Last Name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.1"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etLn"
+                            style="@style/student_details_title_input"
+
+                            android:inputType="textEmailAddress" />
+                    </LinearLayout>
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/body_item_margin2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvMiddleName"
+                            style="@style/form_title"
+                            android:text="Phone Number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.1"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etPhone"
+                            style="@style/student_details_title_input"
+
+                            android:inputType="textEmailAddress" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/body_item_margin2"
+                        android:orientation="vertical">
+
+                        <TextView
+
+                            style="@style/form_title"
+                            android:text="Contact Address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.1"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etAddress"
+                            style="@style/student_details_title_input"
+
+
+                            android:inputType="textEmailAddress" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/body_item_margin2"
+                        android:orientation="vertical">
+
+                        <TextView
+
+                            style="@style/form_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.1"
+                            android:text="Next of kin(1)"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/etNk1"
+                            style="@style/student_details_title_input"
+
+                            android:inputType="textEmailAddress" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/body_item_margin2"
+                        android:orientation="vertical">
+
+                        <TextView
+
                             style="@style/form_title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -190,7 +237,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/nk2"
+                            android:id="@+id/etNk2"
                             style="@style/student_details_title_input"
 
                             android:inputType="textEmailAddress" />
@@ -237,7 +284,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/nk3"
+                            android:id="@+id/etNk3"
                             style="@style/student_details_title_input"
 
                             android:inputType="textEmailAddress" />
