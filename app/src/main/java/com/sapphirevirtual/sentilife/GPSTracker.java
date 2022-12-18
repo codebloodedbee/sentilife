@@ -94,7 +94,7 @@ public class GPSTracker extends Service implements LocationListener,android.loca
 
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
-        Toast.makeText(getApplicationContext(), "Sensor oncreate", Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(), "Sensor oncreate", Toast.LENGTH_LONG).show();
 
         if (Build.VERSION.SDK_INT >= 26) {
             String CHANNEL_ID = "my_channel_01";

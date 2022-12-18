@@ -51,6 +51,7 @@ public class SplashScreen extends AppCompatActivity {
             login2();
 
 
+
         } else {
 
             timer(3000);
@@ -63,8 +64,10 @@ public class SplashScreen extends AppCompatActivity {
 
     private void login2(){
 
+
         String email = sp.getString("Semail","");
         String pass= sp.getString("Spassword","");
+
 
 
 
@@ -96,7 +99,7 @@ public class SplashScreen extends AppCompatActivity {
                                     String phoneNumber = datao.getString("phoneNumber");
                                     String homePhoneNumber = datao.getString("homePhoneNumber");
                                     String contactAddress = datao.getString("contactAddress");
-                                    String pictureFile = datao.getString("pictureFile");
+                                    String pictureFile = datao.getString("pictureFileName");
                                     String state = datao.getString("state");
                                     String country = datao.getString("country");
                                     String emailVerifyStatus = datao.getString("emailVerifyStatus");
@@ -115,13 +118,17 @@ public class SplashScreen extends AppCompatActivity {
 //                                    progressOFF();
 //                                    progressDialog.dismiss();
 
+
+
                                     if(emergencyNumber1.equals("")){
 
                                         goUpdateProfile();
+//                                        Toast.makeText(SplashScreen.this, emergencyNumber1, LENGTH_SHORT).show();
 
                                     }else {
 
-                                        go();
+                                        gotoDashboard();
+//                                        Toast.makeText(SplashScreen.this, emergencyNumber1, LENGTH_SHORT).show();
                                     }
 
 
@@ -138,6 +145,7 @@ public class SplashScreen extends AppCompatActivity {
                             } else {
 //                                progressOFF();
 //                                progressDialog.dismiss();
+                                go();
                                 Toast.makeText(SplashScreen.this, jsonObject.getString("message"), LENGTH_SHORT).show();
                             }
 
@@ -150,6 +158,7 @@ public class SplashScreen extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        go();
                         //what to do if it encounter error
 //                        progressOFF();
 //                        progressDialog.dismiss();
@@ -216,6 +225,12 @@ public class SplashScreen extends AppCompatActivity {
 
 
         Intent intent = new Intent(SplashScreen.this, Launch.class);
+        startActivity(intent);
+    }
+
+    public void gotoDashboard(){
+
+        Intent intent = new Intent(SplashScreen.this, DashboardActivity.class);
         startActivity(intent);
     }
 }

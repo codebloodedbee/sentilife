@@ -320,7 +320,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="bottom"
                         android:layout_weight="0"
-                        android:onClick="submit"
+                        android:onClick="btnSubmit"
 
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
